@@ -1,0 +1,11 @@
+{
+    "APPNAME": "Angular Application",
+    "CODENAME": "AA",
+    "VERSION": "1.0.0",
+    "REST_API_SERVER": "http://localhost",
+    "REST_API_PORT": 7070,
+    "REST_API_ENPOINT": "api",
+    "REST_API_VERSION": "v1.0.0",
+    "PROD": false,
+    "LOGS": false
+}

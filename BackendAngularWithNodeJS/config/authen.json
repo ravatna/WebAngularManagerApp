@@ -1,0 +1,5 @@
+[
+    {"id":1000,"username": "admin", "password": "admin","feature":"admin","token":""},
+    {"id":1001,"username": "owner", "password": "owner","feature":"owner","token":""},
+    {"id":1002,"username": "reader", "password": "reader","feature":"reader","token":""}
+]

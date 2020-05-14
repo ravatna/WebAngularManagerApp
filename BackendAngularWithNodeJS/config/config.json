@@ -1,0 +1,14 @@
+{
+    "MySQL": {
+        "connectionLimit": 10000,
+        "host": "127.0.0.1",
+        "database": "webangularmanagerapp",
+        "user": "root",
+        "password": "Clexpert",
+        "timezone": "UTC",
+        "port": 3306
+    },
+    "MongoDB": {
+        "connectionString": "mongodb://localhost/WebAngularManagerApp"
+    }
+}
