@@ -24,6 +24,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeModule } from './pages/home/home.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { AccountComponent } from './pages/account/account.component';
+import { ModalAuthenComponent } from './components/modal-authen/modal-authen.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
     AppsettingComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AccountComponent,
+    ModalAuthenComponent
   ],
   imports: [
     BrowserModule,
