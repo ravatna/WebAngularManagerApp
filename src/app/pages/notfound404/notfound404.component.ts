@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-var $: JQueryStatic = (window as any)["jQuery"];//Import jQuery
+var $ = (window as any)["jQuery"];//Import jQuery
 
 @Component({
   selector: 'app-notfound404',

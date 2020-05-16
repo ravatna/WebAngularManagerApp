@@ -172,12 +172,40 @@ router.post('/register', async function(req, res, next) {
   output.debug = [];
 
   //#post body
-  const email  = req.body.email;
-  const tel  = req.body.tel;
-  // const fullname  = req.body.fullname;
   const username  = req.body.username;
   const password  = req.body.password;
-
+  // const id = req.body.id;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const passport = req.body.passport;
+  const idcard = req.body.idcard;
+  const gender = req.body.gender;
+  const email = req.body.email;
+  const email2 = req.body. null;
+  const saltKey = req.body.saltKey;
+  const phone = req.body.phone;
+  const phone2 = null;
+  const phone3 = null;
+  const imageCard13 = null;
+  const whatApp = req.body.whatApp;
+  const line1 = req.body.line1;
+  const line2 = null;
+  const line3 = null;
+  const typeMember = req.body.typeMember;
+  const typeDealer = req.body.typeDealer;
+  const profileDocument = null;
+  const imageProfile = null;
+  const imageProfileIcon = null;
+  const fromOnline = null;
+  const fromOnlineKey = null;
+  const otp = null;
+  const otpUpdate = null;
+  const regDate = null;
+  const confirmDate = null;
+  const confirmBy = null;
+  const lastUpdate = null;
+  const expDate = null;
+  const statusPersonal = null;
 
   // if( 
   //      (email    == undefined || email == null    || email == '')    ||
@@ -198,24 +226,24 @@ router.post('/register', async function(req, res, next) {
 
   const newPersonal = {
     "id": null,
-    "firstName": "wuttichai",
-    "lastName": "ratanapron",
-    "passport": "1234567890",
-    "idcard": "1234567890",
+    "firstName": firstName,
+    "lastName": lastName,
+    "passport": passport,
+    "idcard": idcard,
     "gender": null,
     "email": email,
     "email2": null,
     "saltKey": null,
-    "phone":  tel,
+    "phone":  phone,
     "phone2": null,
     "phone3": null,
     "imageCard13": null,
-    "whatApp": null,
-    "line1": null,
+    "whatApp": whatApp,
+    "line1": line1,
     "line2": null,
     "line3": null,
     "typeMember": null,
-    "typeDealer": "",
+    "typeDealer": null,
     "profileDocument": null,
     "imageProfile": "",
     "imageProfileIcon": null,
@@ -242,12 +270,23 @@ router.post('/register', async function(req, res, next) {
       output.type = "ERR";
       output.data = [error];
       output.debug = req.body;
-      res.status(200).json(error);
+      res.status(200).json(output);
       return 
     }
   });
 
   console.log("personal => ", personal);
+  if(personal == undefined){
+      console.log("Error Insert Personal => ", personal);
+      output.code = 200;
+      output.message = "Personal Error!";
+      output.type = "ERR";
+      output.data = [];
+      output.debug = req.body;
+      res.status(200).json(output);
+      return 
+  }
+
   if(personal[0] == undefined){
     console.log("Error");
     output.code = 200;
@@ -318,7 +357,7 @@ router.post('/login', async function(req, res, next) {
 
       const payload = {
         iss: 'givy.com/th',
-        name: 'Appllication Mobile Givy',
+        name: 'Appllication Mobile',
         aud: 'everyone',
         sub: req.body.username,
         iat: new Date().getTime(),
@@ -334,7 +373,7 @@ router.post('/login', async function(req, res, next) {
         "ProfileImg": fullUrl+'account.png',
         // "FollowBy": getAccount0.FollowBy,
         "JWT": jwt.encode(payload, SECRET),
-        "Header": "GivyAuthorization",
+        "Header": "UoqAuthorization",
         "personal": (personal.length == 1 ? personal[0] : [])
       };
       output.data.push(account);
@@ -343,12 +382,7 @@ router.post('/login', async function(req, res, next) {
       console.log("not Math Account:", getAccounts);
     }
   }else{
-    let account = {
-      "AccountId": 0,
-      "AccountName": "",
-      "ProfileImg": fullUrl+"logo.png",
-      "FollowBy": []
-    };
+    let account = [];
     output.data.push(account);
     output.message = "Not Found Account," + output.message;
     console.log("Find Account: ", getAccounts.length);

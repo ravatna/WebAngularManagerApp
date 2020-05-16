@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+declare var $: any;
 
 @Component({
   selector: 'app-appheader',
@@ -7,12 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppheaderComponent implements OnInit {
   IsLogin = false;
-  constructor() { }
-
-  ngOnInit(): void {
-    setTimeout(()=>{
-      this.IsLogin = false;
-    }, 1500);
+  constructor(private router: Router) { 
+    
   }
 
+  ngOnInit(): void {
+    this.IsLogin = this.checkStorageLogin();
+  }
+
+  checkStorageLogin(){
+    let act = null;
+    act = localStorage.getItem('account');
+    if(act == null || act == undefined || act == ''){
+      return false;
+    }
+    return true;
+  }
+
+  logout(){
+    localStorage.removeItem('account');
+    this.IsLogin = this.checkStorageLogin();
+    $('.modal').removeClass('show');
+    this.router.navigateByUrl('/home');
+  }
 }

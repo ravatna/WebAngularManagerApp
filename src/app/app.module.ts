@@ -34,7 +34,6 @@ import { ModalAuthenComponent } from './components/modal-authen/modal-authen.com
     AppmenuComponent,
     AppsettingComponent,
     HomeComponent,
-    LoginComponent,
     DashboardComponent,
     AccountComponent,
     ModalAuthenComponent
