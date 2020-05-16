@@ -20,7 +20,6 @@ import { AppsettingComponent } from './components/appsection/appsetting/appsetti
 //Config
 import JSON_CONFIG from '../assets/config/config.inc.json';
 import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeModule } from './pages/home/home.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
